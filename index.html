@@ -4,11 +4,43 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Food Finder App</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./assets/css/style.css" />
     </head>
 
     <body>
-        <header><h1>List of Collaborators</h1></header>
+     
+
+        <div class="main-content">
+            <!-- The form -->
+        <form id="searchBar" action="action_page.php" method="get">
+         <input type="text"  id="searchResults" placeholder="Search for Food" name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+          <button type="reset">Reset</button>
+          <output name="results"><ul>
+            <li1></li1>
+            <li2></li2>
+            <li3></li3>
+            <li5></li5>
+              </ul></output>
+        </form>
+
+        
+          
+        <!--Favorites Aside Section-->
+        <aside id="favorites" class="past-favorites">
+            <ul id="pastlist">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+             </ul>
+            
+        </aside>
+
+        
+        <header><h4>List of Collaborators</h4></header>
         <section>
             <ul>
                 <li>Jacob Flores</li>
@@ -17,8 +49,6 @@
                 <li>Alen Tokic</li>
             </ul>
         </section>
-    
-    
         <script src="./assets/js/script.js"></script>
     </body>
 
