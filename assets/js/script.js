@@ -11,32 +11,33 @@ var totalData = [];
 
 var searchBtn = document.querySelector('.inp');
 
- // Gets the input from user.
- var userInput = document.querySelector('#searchResults');
- var userResult = userInput.value;
- console.log(userResult);
- // variables to mix the user input and apiKey to the requestUrls.
- var fetchUrl = requestUrl + apiKey + '&query=' + userResult;
-
- fetch(fetchUrl)
- .then(function (response) {
-   return response.json();
-
- })
- .then(function (data) {
-   console.log(data);
-   console.log(userResult);
-
-  checkRecipes(data, userResult);
-
- });
 
 
-searchBtn.addEventListener('click', function() {
- 
+searchBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Gets the input from user.
+    var userInput = document.querySelector('#searchResults');
+    var userResult = userInput.value;
+    console.log(userResult);
+    // variables to mix the user input and apiKey to the requestUrls.
+    var fetchUrl = requestUrl + apiKey + '&query=' + userResult;
+
+    fetch(fetchUrl)
+    .then(function (response) {
+      return response.json();
+
+    })
+    .then(function (data) {
+      console.log(data);
+      console.log(userResult);
+
+      checkRecipes(data, userResult);
+
+    });
 })
 
-var displayerEl = document.querySelector('.fisplay');
+var displayerEl = document.querySelector('.display');
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // function to search for recipes.
