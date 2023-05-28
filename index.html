@@ -3,49 +3,59 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Food Finder App</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./assets/css/style.css" />
+        <title>Food Finder App</title>
     </head>
 
     <body>
+
+     <header>
+        <h2>Food finder</h2>
+
+     </header>
+     <section class="searchContainer">
+        <div class="searchBar">
+            <input type="text" placeholder="Search Recipes"> <button class="btn">Seachfood</button>
+        </div>
+        <div id="recipe-container">
+            <div class="recipe">
+                <div class="recipe-title"></div>
+                <div class="recipe-text">Recipe title</div>
+                <div class="food-image">
+                    <img src="burger.jpg" alt="recipe-img">
+                </div>
+            <div class="recipe-text">
+                <ul>
+                    <li>step 1</li>
+                    <li>step 2</li>
+                    <li>step 3</li>
+                    <li>step 4</li>
+                    <li>step 5</li>
+                </ul>
+
+            </div>           
+         </div>
+        </div>
+     </section>
      
-
-        <div class="main-content">
-            <!-- The form -->
-        <form id="searchBar" action="action_page.php" method="get">
-         <input type="text"  id="searchResults" placeholder="Search for Food" name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
-          <button type="reset">Reset</button>
-          <output name="results"><ul>
-              </ul></output>
-        </form>
-
+        <div class="display"> </div>
+    
         
-          
-        <!--Favorites Aside Section-->
-        <aside id="favorites" class="past-favorites">
-             <ul id="pastlist" class="favoritesList">
-                <h3>Favorites</h3>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-             </ul>
-            
-        </aside>
+                 
 
-        
-        <header><h4>List of Collaborators</h4></header>
-        <section>
+
+  <h6>List of Collaborators</h6>
+        <footer>
             <ul>
-                <li>Jacob Flores</li>
-                <li>Krysta Gonzalez</li>
-                <li>Carlos Osuna</li>
-                <li>Alen Tokic</li>
+            <li>Jacob Flores</li>
+            <li>Krysta Gonzalez</li>
+            <li>Carlos Osuna</li>
+            <li>Alen Tokic</li>
+            <li>Dylan Cummins</li>
+            <li>Image by <a href="https://pixabay.com/users/wow_pho-916237/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1334633">Wow Phochiangrak</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1334633">Pixabay</a></li>
             </ul>
-        </section>
+        </footer>
         <script src="./assets/js/script.js"></script>
     </body>
 
