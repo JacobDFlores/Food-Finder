@@ -1,0 +1,138 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*using percentage, we can use VH, ther are the same*/
+body{
+    height: 100%;
+    width: 100%;
+    background: beige;
+    height: 100%;
+    
+
+}
+
+header{
+/*gap is the gap in the flex diplay*/
+    height: 70px;
+    color: yellowgreen;
+    background: teal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-right: 30px;
+    border-bottom: 5px solid ;
+    }
+
+
+    .searchContainer{
+        text-align:center;
+        height: 100% - 70px;
+
+    }
+    .searchBar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 75px;
+        
+
+    }
+
+.searchBar input[type="text"]{
+    padding:5px 15px;
+    line-height:normal;
+    font: 1em sans-serif;
+    border-color: black;
+
+}
+
+.btn{
+    padding: 5px 10px;
+    margin-left: 10px;;
+    background: red;
+    border-radius: 5px;
+    user-select: none;
+    font-size: 15px;
+    border:10px;
+    cursor:grab;
+
+}
+
+.btn:hover{
+    background: lightskyblue;
+    border-color: blueviolet;
+    color:azure;
+
+}
+
+#recipe-container{
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.recipe{
+    height:250px;
+    width:250px;
+    box-shadow: 1px 1px 9px 3px border color blue;
+    margin: 20px;
+}
+
+.recipe-title{
+    height: 45px;
+    display: flex;
+    align-items:center;
+    font-size: 4rem;
+    justify-content: center;
+
+}
+
+.food-image{
+    height: 200px;
+}
+.food-image img{
+    height: 100%;
+    width: 100%;
+}
+
+.recipe-text{
+    height: 100px;
+    visibility: hidden;
+    opacity: 0;
+    transition:  all 200ms ease-out;
+    background: green;
+    margin-top:15px;
+    overflow: hidden;
+    overflow-y: auto;
+
+}
+
+.recipe-text ul{
+    list-style-type: circle;
+    list-style-position: inside;
+    text-align: left;
+    padding: 10px;
+
+}
+
+
+.recipe-text ul > li{
+    padding: 5px;
+}
+
+.recipe:hover .recipe-text{
+    height: 100px;
+    visibility: visible;
+    opacity: 1;
+
+}
+
+footer{
+    font-size: smaller;
+    
+    
+}
