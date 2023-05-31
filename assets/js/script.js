@@ -38,7 +38,8 @@ searchBtn.addEventListener('click', function(e) {
       checkRecipes(data, userResult);
 
     });
-})
+  
+});
 
 // selector for where the images and recipe names displays.
 var displayerEl = document.querySelector('.recipe');
