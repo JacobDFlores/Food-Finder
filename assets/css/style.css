@@ -195,3 +195,8 @@ footer{
 .ingredients {
     color: aliceblue;
 }
+
+#map {
+    width:900px;
+    height:500px;
+}
