@@ -86,6 +86,8 @@ function checkRecipes(data, userResult) {
     infoPlacer.appendChild(container);
     infoPlacer.setAttribute('class', 'info-placer');
   
+   
+
     // appends the preview elements to the final container.
     containerFinal.appendChild(infoPlacer);
     containerFinal.appendChild(containerArticle);

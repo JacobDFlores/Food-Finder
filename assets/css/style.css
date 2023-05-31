@@ -10,6 +10,7 @@
 header{
 /*gap is the gap in the flex diplay*/
     height: 75px;
+    width:100%;
     color: yellowgreen;
     background: teal;
     display: flex;
@@ -85,6 +86,7 @@ header{
 }
 
 
+
 footer{
     font-size: smaller;
     
@@ -100,7 +102,7 @@ footer{
 .container2 {
     padding: 0;
     display: flex;
-    width: auto;
+    width: 100%;
     gap: 30px;
     margin: 30px 0;
     background-color: rgba(102, 51, 153, 0.555);
@@ -127,9 +129,14 @@ footer{
     margin: 0;
 }
 
+#recipe-container{
+    display:inline-table;
+    
+}
+
 /* Style for the article sections */
 .recipe-details {
-    display: flex;
+    
     justify-content: center;
     align-items: center;
     border: 2px solid rebeccapurple;
@@ -137,6 +144,7 @@ footer{
     padding: 30px;
     width: 370px;
     flex-direction: column;
+    
 }
 
 .recipe-details section {
@@ -144,6 +152,7 @@ footer{
     padding: 10px;
     border-radius: 30px;
     margin-bottom: 20px;
+    
 } 
 
 /* Style for the ingredients text, previewsly created on JS. */
