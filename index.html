@@ -9,41 +9,41 @@
     </head>
 
     <body>
-     <header>
-        <h2>Food finder</h2>
+        <header>
+            <h2>Food finder</h2>
+        </header>
 
-      </header>
-
-<!--Quick body stying here-->
+    <!--Quick body stying here-->
     <style>
-      body{
-        background-size: 100% 100%;
-        background: url(food-background.jpg);
-        background-repeat: repeat;
-        }
-        </style>
+            body{
+            background-size: 100% 100%;
+            background: url(food-background.jpg);
+            background-repeat: repeat;
+            }
+    </style>
 
-     <section class="searchContainer">
-        <div class="searchBar">
-            <input type="text" id="text-inp" placeholder="Search Recipes"> <button class="btn">Seachfood</button>
-            <button class="clear-btn" type="reset">Reset Search</button>
-            <nav class="fav-tab">
-                <a href="#favorites">Favorites</a>
-            </nav>
-        </div>
-        <div id="recipe-container">
-            <div class="recipe">
-            
-                      
-         </div>
-        </div>
-     </section>
+        <section class="searchContainer">
+            <div class="searchBar">
+                <input type="text" id="text-inp" placeholder="Search Recipes"> <button class="btn">Seachfood</button>
+                <button class="clear-btn" type="reset">Reset Search</button>
+                <nav class="fav-tab">
+                    <a href="#favorites">Favorites</a>
+                </nav>
+            </div>
+            <div id="recipe-container">
+                <div class="recipe"></div>
+            </div>
+        </section>
 
-     <div id="map"> </div>
+        <div class="mapBox">
+            <div id="map" style=""> </div>
+        </div>
      
-        <div class="display"> </div>
+        <!-- I dont think we need this piece of html for anything so far -->
+        <!-- <div class="display"> </div> -->
     
-        <div id="favorites">
+        <!-- I dont think we need this piece of html for anything so far -->
+        <!-- <div id="favorites" style="display:none;">
             <ul>
                 <li>step 1</li>
                 <li>step 2</li>
@@ -51,30 +51,27 @@
                 <li>step 4</li>
                 <li>step 5</li>
             </ul>
-        </div>
-                 
-
-
-  <h6>List of Collaborators</h6>
-        <footer>
+        </div> -->
+  
+        <footer style="color:white;">
+            <h5>List of Collaborators</h5>
             <ul>
-            <li>Jacob Flores</li>
-            <li>Krysta Gonzalez</li>
-            <li>Carlos Osuna</li>
-            <li>Alen Tokic</li>
-            <li>Dylan Cummins</li>
-            <li>Image by Image by <a href="https://pixabay.com/users/0fjd125gk87-51581/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=366875">0fjd125gk87</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=366875">Pixabay</a>
-      
-        <!-- <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjLv8601naEq2s5UgRYtsJwyqspecgooI&libraries=places&callback=initMap">
-        </script> -->
-        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjLv8601naEq2s5UgRYtsJwyqspecgooI&libraries=places&callback=initMap"></script> -->
+                <li>Jacob Flores</li>
+                <li>Krysta Gonzalez</li>
+                <li>Carlos Osuna</li>
+                <li>Alen Tokic</li>
+                <li>Dylan Cummins</li>
+                <li>Image by Image by <a href="https://pixabay.com/users/0fjd125gk87-51581/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=366875">0fjd125gk87</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=366875">Pixabay</a></li>
+            </ul>
+        </footer>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
         <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjLv8601naEq2s5UgRYtsJwyqspecgooI&callback=initMap&libraries=places&v=weekly"
-      defer
-    ></script>
-
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjLv8601naEq2s5UgRYtsJwyqspecgooI&callback=initMap&libraries=places&v=weekly"
+            defer
+        ></script>
 
         <script src="./assets/js/script.js"></script>
     </body>

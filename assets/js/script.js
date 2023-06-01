@@ -113,35 +113,85 @@ function checkRecipes(data, userResult) {
 
 
 
-//display map with local markets near the user
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+////                                                              ///
+////                Very Precious Code for the Google             ///
+////                maps API, and its places library              ///
+////                                                              ///
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 let map;
 let service;
-let infowindow;
+let infoWindow;
 
 function initMap() {
-  const sydney = new google.maps.LatLng(-33.867, 151.195);
+  const sanAntonio = new google.maps.LatLng(29.425, -98.494);
 
-  infowindow = new google.maps.InfoWindow();
   map = new google.maps.Map(document.getElementById("map"), {
-    center: sydney,
-    zoom: 15,
+    center: sanAntonio,  
+    zoom: 12,
   });
 
-  const request = {
-    query: "Museum of Contemporary Art Australia",
-    fields: ["name", "geometry"],
-  };
+  infoWindow = new google.maps.InfoWindow();
 
-  service = new google.maps.places.PlacesService(map);
-  service.findPlaceFromQuery(request, (results, status) => {
-    if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-      for (let i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
+  const locationButton = document.createElement("button");
 
-      map.setCenter(results[0].geometry.location);
+  locationButton.textContent = "Search for Markets near You!";
+  locationButton.classList.add("custom-map-control-button");
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+  locationButton.addEventListener("click", () => {
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent("You are here.");
+          infoWindow.open(map);
+          map.setCenter(pos);
+
+          const request = {
+            location: pos,
+            radius: '5000',
+            keyword: ['groceries']
+          };
+
+          service = new google.maps.places.PlacesService(map);
+          service.nearbySearch(request, callback);
+      
+        },
+        () => {
+          handleLocationError(true, infoWindow, map.getCenter());
+        }
+      );
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
     }
   });
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(
+    browserHasGeolocation
+      ? "Error: The Geolocation service failed."
+      : "Error: Your browser doesn't support geolocation."
+  );
+  infoWindow.open(map);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  }
 }
 
 function createMarker(place) {
