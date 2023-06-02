@@ -63,7 +63,7 @@ function checkRecipes(data, userResult) {
    
     // create a div element which is the container where everything is displayed. 
     let containerFinal = document.createElement('div');
-    containerFinal.setAttribute('class', 'container2');
+    containerFinal.setAttribute('class', 'container2' );
 
     // create the article section.
     let containerArticle = document.createElement('article');
