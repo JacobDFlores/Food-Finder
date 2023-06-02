@@ -12,6 +12,9 @@ var totalData = [];
 // getter for the magnifying glass (search button).
 var searchBtn = document.querySelector('.btn');
 
+// variable to select the reset button
+var resetBtn = document.querySelector('.clear-btn');
+
 
 
 // event listener for the serch button to then do everithing.
@@ -39,7 +42,14 @@ searchBtn.addEventListener('click', function(e) {
 
     });
   
+}); 
+
+resetBtn.addEventListener('click', function() {
+  document.querySelector('#text-inp').value = '';
+  displayerEl.innerHTML = '';
+
 });
+
 
 // selector for where the images and recipe names displays.
 var displayerEl = document.querySelector('.recipe');
