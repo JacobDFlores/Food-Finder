@@ -12,6 +12,9 @@ var totalData = [];
 // getter for the magnifying glass (search button).
 var searchBtn = document.querySelector('.btn');
 
+// variable to select the reset button
+var resetBtn = document.querySelector('.clear-btn');
+
 
 
 // event listener for the serch button to then do everithing.
