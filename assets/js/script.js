@@ -43,6 +43,13 @@ searchBtn.addEventListener('click', function(e) {
     });
 })
 
+resetBtn.addEventListener('click', function() {
+  document.querySelector('#text-inp').value = '';
+  displayerEl.innerHTML = '';
+
+});
+
+
 // selector for where the images and recipe names displays.
 var displayerEl = document.querySelector('.recipe');
 
