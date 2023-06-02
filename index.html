@@ -3,37 +3,70 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie edge">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <link rel="stylesheet" href="./assets/css/style.css" />
+        <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        
         <title>Food Finder App</title>
     </head>
 
     <body>
-        <header>
-            <h2>Food finder</h2>
-        </header>
+     <header>
+       
 
-    <!--Quick body stying here-->
+       <div class="col s12" ><h2 class ="right-align" span class="flow-text">Food finder</h2>
+       
+    </div>
+      </header>
+
+<!--Quick body stying here-->
     <style>
-            body{
-            background-size: 100% 100%;
-            background: url(food-background.jpg);
-            background-repeat: repeat;
-            }
-    </style>
+      body{
+        background-size: 100% 100%;
+        background: url(./assets/food-background.jpg);
+        background-repeat: repeat;
+        }
+        </style>
 
-        <section class="searchContainer">
-            <div class="searchBar">
-                <input type="text" id="text-inp" placeholder="Search Recipes"> <button class="btn">Seachfood</button>
-                <button class="clear-btn" type="reset">Reset Search</button>
-                <nav class="fav-tab">
-                    <a href="#favorites">Favorites</a>
-                </nav>
+
+     <section class="searchContainer black-text center-align">
+        <div class="searchBar">
+            <input type="text white text" id="text-inp" placeholder="Search Recipes"> <button class="btn">Seachfood</button>
+            <a class="waves-effect waves-light btn modal-trigger btn-panel purple" href="#modal1">Favorites</a>
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+              <div class="modal-content background light purple">
+                <h3>Favorites</h3>
+                <ul class="favorites-list left-align ">
+                    <li><strong>1</strong></li>
+                    <li><strong>2</strong></li>
+                    <li><strong>3</strong></li>
+                    <li><strong>4</strong></li>
+                    <li><strong>5</strong></li>
+                    <li><strong>6</strong></li>
+                    </ul>
+                </div>
+                 <div class="modal-footer background teal">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+              </div>
             </div>
-            <div id="recipe-container">
-                <div class="recipe"></div>
-            </div>
-        </section>
+          
+             <button class="clear-btn" type="reset">Clear Search</button>
+
+             </div>
+        
+        <div id="recipe-container">
+            <div class="recipe">
+            
+                      
+         </div>
+        </div>
+     </section>
 
         <div class="mapBox">
             <div id="map" style=""> </div>
@@ -74,6 +107,8 @@
         ></script>
 
         <script src="./assets/js/script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
     </body>
 
 </html>
