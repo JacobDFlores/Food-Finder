@@ -21,6 +21,7 @@ header{
     border-bottom: 5px solid ;
     }
 
+   
      .searchContainer{
         text-align:center;
         height: 100% - 70px;
@@ -101,7 +102,7 @@ footer{
 /* Style for the whole box of the recipe. */
 .container2 {
     padding: 0;
-    display: flex;
+    display:flex;
     width: 100%;
     gap: 30px;
     margin: 30px 0;
@@ -111,13 +112,24 @@ footer{
     
 }
 
+
+/*styling  for boxes*/
+.info-placer{
+    width:75%;
+    height:250px;
+    display:flex;
+    flex-direction: row;
+}
+
 /* Style for the H3 inside the box, which is for the recipe title. */
 .info-placer h3 {
     width: 300px;
     margin: 20px auto;
+    margin-left:15%;
+    margin-top:10%;
     text-align: center;
     padding-top: 10px;
-    border-top: 2px solid rebeccapurple;
+    border-top: 2px solid rgb(37, 139, 171);
     color: brown;
 }
 
@@ -144,7 +156,8 @@ footer{
     padding: 30px;
     width: 370px;
     flex-direction: column;
-    
+    /*set display to none to hide ingredients and link*/
+    display:none;
 }
 
 .recipe-details section {
