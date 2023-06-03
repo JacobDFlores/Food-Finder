@@ -102,7 +102,7 @@ footer{
 .container2 {
     padding: 0;
     display:flex;
-    width: 100%;
+    width: 75%;
     gap: 30px;
     margin: 30px 0;
     background-color: rgba(102, 51, 153, 0.555);
@@ -122,7 +122,10 @@ footer{
 
 /* Style for the H3 inside the box, which is for the recipe title. */
 .info-placer h3 {
-    width: 300px;
+    /*changed font size @KrystaGonzalez*/
+    font-size: 25px;
+    height:50px;
+    width:300px;
     margin: 20px auto;
     margin-left:15%;
     margin-top:10%;
@@ -138,6 +141,11 @@ footer{
     border-radius: 15px;
     padding: 20px;
     margin: 0;
+    margin-top: 45px;
+    /*ajusted img size smaller to make container smaller-KrystaGonzalez*/
+    width:150px;
+    height:150px;
+
 }
 
 #recipe-container{
@@ -155,7 +163,7 @@ footer{
     padding: 30px;
     width: 370px;
     flex-direction: column;
-    /*set display to none to hide ingredients and link*/
+    /*set display to none to hide ingredients and link-KrystaGonzalez*/
     display:none;
 }
 
