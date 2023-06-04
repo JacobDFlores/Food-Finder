@@ -18,6 +18,9 @@ var resetBtn = document.querySelector('.clear-btn');
 // variable to select the google map container
 var googleMap = document.getElementById('map');
 
+// variable for footer
+var footerEl = document.getElementById('footerStarter');
+
 
 // event listener for the serch button to then do everithing.
 // it has a event preventDefault so the elements stays and dont refresh the website.
@@ -26,6 +29,8 @@ searchBtn.addEventListener('click', function(e) {
     
     //Show google map
     googleMap.style.display = "";
+    //remove fixed footer
+    footerEl.classList.remove("footerStarter");
 
     // Gets the input from user.
     var userInput = document.querySelector('#text-inp');
@@ -54,6 +59,8 @@ resetBtn.addEventListener('click', function() {
 
   //hide google map
   googleMap.style.display = "none";
+  //make footer fixed
+  footerEl.classList.add('footerStarter');
 
 });
 
