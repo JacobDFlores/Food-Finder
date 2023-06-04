@@ -179,3 +179,26 @@ footer{
 .ingredients {
     color: aliceblue;
 }
+
+
+
+/*styling for google api map*/
+#map {
+    width:900px;
+    height:500px;
+}
+
+.mapBox{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:10px;
+    padding:5px;
+}
+
+.mapBox button{
+    font-size:20px;
+    margin-top:15px;
+    padding:5px;
+}
