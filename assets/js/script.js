@@ -15,6 +15,9 @@ var searchBtn = document.querySelector('.btn');
 // variable to select the reset button
 var resetBtn = document.querySelector('.clear-btn');
 
+// variable for bottom clear button
+var btmResetBtn = document.getElementById("btmClear");
+
 // variable to select the google map container
 var googleMap = document.getElementById('map');
 
@@ -31,6 +34,8 @@ searchBtn.addEventListener('click', function(e) {
     googleMap.style.display = "";
     //remove fixed footer
     footerEl.classList.remove("footerStarter");
+    //Show bottom clear search button
+    btmResetBtn.style.display = "";
 
     // Gets the input from user.
     var userInput = document.querySelector('#text-inp');
@@ -61,6 +66,8 @@ resetBtn.addEventListener('click', function() {
   googleMap.style.display = "none";
   //make footer fixed
   footerEl.classList.add('footerStarter');
+  //hide the second clear button
+  btmResetBtn.style.display = "none";
 
 });
 
@@ -107,7 +114,11 @@ function checkRecipes(data, userResult) {
 
     // create a div element to store the recipe img and title.
     let infoPlacer = document.createElement('div');
-    infoPlacer.appendChild(img);
+    let imgContainer = document.createElement('div');
+
+    imgContainer.appendChild(img);
+    imgContainer.setAttribute('class', 'imgContainer');
+    infoPlacer.appendChild(imgContainer);
     infoPlacer.appendChild(container);
     infoPlacer.setAttribute('class', 'info-placer');
   

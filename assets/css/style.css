@@ -119,21 +119,22 @@ footer{
     width:75%;
     height:250px;
     padding: 30px;
+    display:flex;
+    align-items:center;
 }
 
 /* Style for the H3 inside the box, which is for the recipe title. */
 .info-placer h3 {
     /*changed font size @KrystaGonzalez*/
     font-size: 25px;
-    height:50px;
+    height:fit-content;
     width:200px;
-    margin: 20px auto;
-    margin: top 10px;
+    margin:0 0 0 30px;
+    padding-left:30px;
     text-align: center;
-    padding-top: 10px;
-    border-top: 2px solid rgb(75, 153, 51);
+    
+    /* border-left: 2px solid rgb(75, 153, 51); */
     color: rgb(255, 255, 255);
-    padding-bottom: 30px;
 }
 
 /* Style for the IMG of the container. */
@@ -146,6 +147,13 @@ footer{
     /*ajusted img size smaller to make container smaller-KrystaGonzalez*/
     width:150px;
     height:150px;
+    padding-right:30px;
+}
+
+.imgContainer{
+    padding:10px 30px;
+    margin-right:15px;
+    border-right: 2px solid rgb(75, 153, 51);
 }
 
 
