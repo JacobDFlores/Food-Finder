@@ -154,9 +154,9 @@ footer{
     padding: 0;
     display:flex;
     width: 100%;
-    margin: 30px auto;
     border-radius: 15px;
     margin: 30 auto;
+    align-items:center;
 }
 
 
@@ -218,6 +218,7 @@ footer{
     font-size: 15px;
     /*set display to none to hide ingredients and link-KrystaGonzalez*/
     display:none;
+    margin-bottom:20px;
 }
 
 .recipe-details section {
@@ -242,7 +243,6 @@ footer{
     height: 100px;
     padding: 30px;
     margin-left: 30px;
-    margin-top: 90px;
 }
 
 .show-button0:hover, .show-button1:hover, .show-button2:hover, .show-button3:hover, .show-button4:hover,
@@ -262,13 +262,14 @@ footer{
     border-radius: 30px;
     height: 100px;
     padding: 30px;
-    margin-left: 30px;
-    margin-top: 90px;
+    width:50%;
+    align-self:center;
 }
+
 
 .fav-button0:hover, .fav-button1:hover, .fav-button2:hover, .fav-button3:hover, .fav-button4:hover,
 .fav-button5:hover, .fav-button6:hover, .fav-button7:hover, .fav-button8:hover, .fav-button9:hover {
-    transform: scale(1.1);
+    transform: scale(1.04);
     color: rgb(0, 0, 0);
     border: 3px solid rgb(0, 0, 0);
     background-color: white;

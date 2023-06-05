@@ -152,7 +152,7 @@ function checkRecipes(data, userResult) {
    // create a button element to display the recipes details.
    let showFavorite = document.createElement('button');
    showFavorite.setAttribute('class', 'fav-button' + i);
-   showFavorite.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
+   showFavorite.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorite</p>';
    //
 
    ///////////////////////////////////////////////////////////////////////////
@@ -297,9 +297,8 @@ function checkRecipes(data, userResult) {
     minorRow.appendChild(showInfo);
 
     containerFinal.appendChild(minorRow);
-    containerFinal.appendChild(showFavorite);
     containerFinal.appendChild(containerArticle);
-    
+    containerFinal.appendChild(showFavorite);
     
     
     // appends the final element to the final div wich is the .recipe class.
