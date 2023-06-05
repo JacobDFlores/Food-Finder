@@ -61,6 +61,22 @@ searchBtn.addEventListener('click', function(e) {
 resetBtn.addEventListener('click', function() {
   document.querySelector('#text-inp').value = '';
   displayerEl.innerHTML = '';
+  displayerElTwo.innerHTML = '';
+
+
+  //hide google map
+  googleMap.style.display = "none";
+  //make footer fixed
+  footerEl.classList.add('footerStarter');
+  //hide the second clear button
+  btmResetBtn.style.display = "none";
+
+});
+
+btmResetBtn.addEventListener('click', function() {
+  document.querySelector('#text-inp').value = '';
+  displayerEl.innerHTML = '';
+  displayerElTwo.innerHTML = '';
 
   //hide google map
   googleMap.style.display = "none";
@@ -73,13 +89,17 @@ resetBtn.addEventListener('click', function() {
 
 
 // selector for where the images and recipe names displays.
-var displayerEl = document.querySelector('.recipe');
+var displayerEl = document.querySelector('.column1');
+var displayerElTwo = document.querySelector('.column2');
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // function to search for recipes.
 function checkRecipes(data, userResult) {
   // sets the display div to empty(no content)
   displayerEl.innerHTML = "";
+  displayerElTwo.innerHTML = "";
+
   // stores the array of 10 results to the array var {totalData}.
   totalData = data.results;
   // for loop to dynamically create the <img> and names of the recipes to the 
@@ -132,23 +152,162 @@ function checkRecipes(data, userResult) {
    // create a button element to display the recipes details.
    let showFavorite = document.createElement('button');
    showFavorite.setAttribute('class', 'fav-button' + i);
-   showFavorite.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
+   showFavorite.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorite</p>';
    //
 
    ///////////////////////////////////////////////////////////////////////////
   
    
+   displayerEl.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    //Gets a property of the element
+    var selection = e.target;
+
+    var info1 = document.querySelector('.recipe-details1');
+    var info3 = document.querySelector('.recipe-details3');
+    var info5 = document.querySelector('.recipe-details5');
+    var info7 = document.querySelector('.recipe-details7');
+    var info9 = document.querySelector('.recipe-details9');
+    
+    if (selection.matches('.show-button1')) {
+      if (info1.style.display == 'none') {
+        info1.style.display = 'block';
+      } 
+      else {
+        info1.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button3')) {
+      if (info3.style.display == 'none') {
+        info3.style.display = 'block';
+      } 
+      else {
+        info3.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button5')) {
+      if (info5.style.display == 'none') {
+        info5.style.display = 'block';
+      } 
+      else {
+        info5.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button7')) {
+      if (info7.style.display == 'none') {
+        info7.style.display = 'block';
+      } 
+      else {
+        info7.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button9')) {
+      if (info9.style.display == 'none') {
+        info9.style.display = 'block';
+      } 
+      else {
+        info9.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+   })
+
+   displayerElTwo.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    //Gets a property of the element
+    var selection = e.target;
+
+    var info0 = document.querySelector('.recipe-details0');
+    var info2 = document.querySelector('.recipe-details2');
+    var info4 = document.querySelector('.recipe-details4');
+    var info6 = document.querySelector('.recipe-details6');
+    var info8 = document.querySelector('.recipe-details8');
+    
+    if (selection.matches('.show-button0')) {
+      if (info0.style.display == 'none') {
+        info0.style.display = 'block';
+      } 
+      else {
+        info0.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button2')) {
+      if (info2.style.display == 'none') {
+        info2.style.display = 'block';
+      } 
+      else {
+        info2.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button4')) {
+      if (info4.style.display == 'none') {
+        info4.style.display = 'block';
+      } 
+      else {
+        info4.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button6')) {
+      if (info6.style.display == 'none') {
+        info6.style.display = 'block';
+      } 
+      else {
+        info6.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button8')) {
+      if (info8.style.display == 'none') {
+        info8.style.display = 'block';
+      } 
+      else {
+        info8.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+   })
+
    //
 
+   let minorRow = document.createElement("div");
+   minorRow.setAttribute('class', 'minorRow');
+
     // appends the preview elements to the final container.
-    containerFinal.appendChild(infoPlacer);
+    minorRow.appendChild(infoPlacer);
+    minorRow.appendChild(showInfo);
+
+    containerFinal.appendChild(minorRow);
     containerFinal.appendChild(containerArticle);
-    containerFinal.appendChild(showInfo);
     containerFinal.appendChild(showFavorite);
     
     
     // appends the final element to the final div wich is the .recipe class.
-    displayerEl.appendChild(containerFinal);
+    if (i % 2 == 1){
+      displayerEl.appendChild(containerFinal);
+    }
+    else{
+      displayerElTwo.appendChild(containerFinal);
+    }
     
   }
 }
