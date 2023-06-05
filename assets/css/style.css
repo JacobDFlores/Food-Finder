@@ -208,6 +208,27 @@ footer{
     transition: all 400ms;
 }
 
+.fav-button0, .fav-button1, .fav-button2, .fav-button3, .fav-button4, .fav-button5,
+.fav-button6, .fav-button7, .fav-button8, .fav-button9 {
+    color: rgb(255, 255, 255);
+    background-color: rgba(60, 255, 0, 0.089);
+    border: none;
+    border-radius: 30px;
+    height: 100px;
+    padding: 30px;
+    margin-left: 30px;
+    margin-top: 90px;
+}
+
+.fav-button0:hover, .fav-button1:hover, .fav-button2:hover, .fav-button3:hover, .fav-button4:hover,
+.fav-button5:hover, .fav-button6:hover, .fav-button7:hover, .fav-button8:hover, .fav-button9:hover {
+    transform: scale(1.1);
+    color: rgb(0, 0, 0);
+    border: 3px solid rgb(0, 0, 0);
+    background-color: white;
+    transition: all 400ms;
+}
+
 
 
 /*styling for google api map*/
