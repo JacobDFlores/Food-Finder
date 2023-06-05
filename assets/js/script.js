@@ -24,6 +24,15 @@ var googleMap = document.getElementById('map');
 // variable for footer
 var footerEl = document.getElementById('footerStarter');
 
+// variable to store the favorite items.
+var favoriteFoods = [];
+
+//
+var favDisplayer = document.querySelector('.favorites-list');
+
+// get items from the local storage
+var favoriteList = localStorage.getItem('Favorite Items: ');
+favDisplayer.innerHTML = favoriteList;
 
 // event listener for the serch button to then do everithing.
 // it has a event preventDefault so the elements stays and dont refresh the website.
@@ -157,135 +166,6 @@ function checkRecipes(data, userResult) {
 
    ///////////////////////////////////////////////////////////////////////////
   
-   
-   displayerEl.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    //Gets a property of the element
-    var selection = e.target;
-
-    var info1 = document.querySelector('.recipe-details1');
-    var info3 = document.querySelector('.recipe-details3');
-    var info5 = document.querySelector('.recipe-details5');
-    var info7 = document.querySelector('.recipe-details7');
-    var info9 = document.querySelector('.recipe-details9');
-    
-    if (selection.matches('.show-button1')) {
-      if (info1.style.display == 'none') {
-        info1.style.display = 'block';
-      } 
-      else {
-        info1.style.display = 'none';
-      }
-      ////////////////////////////////
-    }
-    
-    if (selection.matches('.show-button3')) {
-      if (info3.style.display == 'none') {
-        info3.style.display = 'block';
-      } 
-      else {
-        info3.style.display = 'none';
-      }
-      ////////////////////////////////
-    }
-    
-    if (selection.matches('.show-button5')) {
-      if (info5.style.display == 'none') {
-        info5.style.display = 'block';
-      } 
-      else {
-        info5.style.display = 'none';
-      }
-      ////////////////////////////////
-    }
-    
-    if (selection.matches('.show-button7')) {
-      if (info7.style.display == 'none') {
-        info7.style.display = 'block';
-      } 
-      else {
-        info7.style.display = 'none';
-      }
-      ////////////////////////////////
-    }
-    
-    if (selection.matches('.show-button9')) {
-      if (info9.style.display == 'none') {
-        info9.style.display = 'block';
-      } 
-      else {
-        info9.style.display = 'none';
-      }
-      ////////////////////////////////
-    }
-    
-   })
-
-   displayerElTwo.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    //Gets a property of the element
-    var selection = e.target;
-
-    var info0 = document.querySelector('.recipe-details0');
-    var info2 = document.querySelector('.recipe-details2');
-    var info4 = document.querySelector('.recipe-details4');
-    var info6 = document.querySelector('.recipe-details6');
-    var info8 = document.querySelector('.recipe-details8');
-    
-    if (selection.matches('.show-button0')) {
-      if (info0.style.display == 'none') {
-        info0.style.display = 'block';
-      } 
-      else {
-        info0.style.display = 'none';
-      }
-      ////////////////////////////////
-    }
-    
-    if (selection.matches('.show-button2')) {
-      if (info2.style.display == 'none') {
-        info2.style.display = 'block';
-      } 
-      else {
-        info2.style.display = 'none';
-      }
-      ////////////////////////////////
-    }
-    
-    if (selection.matches('.show-button4')) {
-      if (info4.style.display == 'none') {
-        info4.style.display = 'block';
-      } 
-      else {
-        info4.style.display = 'none';
-      }
-      ////////////////////////////////
-    }
-    
-    if (selection.matches('.show-button6')) {
-      if (info6.style.display == 'none') {
-        info6.style.display = 'block';
-      } 
-      else {
-        info6.style.display = 'none';
-      }
-      ////////////////////////////////
-    }
-    
-    if (selection.matches('.show-button8')) {
-      if (info8.style.display == 'none') {
-        info8.style.display = 'block';
-      } 
-      else {
-        info8.style.display = 'none';
-      }
-      ////////////////////////////////
-    }
-   })
 
    //
 
@@ -312,12 +192,6 @@ function checkRecipes(data, userResult) {
   }
 }
 
-
-//////////////////////////////////////////////////////////////////////
-// Event listener for when the user wants to target the favorite or 
-// read more buttons/sections.
-//////////////////////////////////////////////////////////////////////
-
 displayerEl.addEventListener('click', function(e) {
   e.preventDefault();
   e.stopPropagation();
@@ -325,41 +199,17 @@ displayerEl.addEventListener('click', function(e) {
   //Gets a property of the element
   var selection = e.target;
 
-  ///////////////////////////////////////////////////////
-  var info0 = document.querySelector('.recipe-details0');
   var info1 = document.querySelector('.recipe-details1');
-  var info2 = document.querySelector('.recipe-details2');
   var info3 = document.querySelector('.recipe-details3');
-  var info4 = document.querySelector('.recipe-details4');
   var info5 = document.querySelector('.recipe-details5');
-  var info6 = document.querySelector('.recipe-details6');
   var info7 = document.querySelector('.recipe-details7');
-  var info8 = document.querySelector('.recipe-details8');
   var info9 = document.querySelector('.recipe-details9');
 
-  //////////////////////////////////////////////////
-  var fav0 = document.querySelector('.fav-button0');
   var fav1 = document.querySelector('.fav-button1');
-  var fav2 = document.querySelector('.fav-button2');
   var fav3 = document.querySelector('.fav-button3');
-  var fav4 = document.querySelector('.fav-button4');
   var fav5 = document.querySelector('.fav-button5');
-  var fav6 = document.querySelector('.fav-button6');
   var fav7 = document.querySelector('.fav-button7');
-  var fav8 = document.querySelector('.fav-button8');
   var fav9 = document.querySelector('.fav-button9');
-
-  // If-Else Statements to check where did the user clicked for
-  // the favorite section and the more information btn.
-  if (selection.matches('.show-button0')) {
-    if (info0.style.display == 'none') {
-      info0.style.display = 'block';
-    } 
-    else {
-      info0.style.display = 'none';
-    }
-    ////////////////////////////////
-  }
   
   if (selection.matches('.show-button1')) {
     if (info1.style.display == 'none') {
@@ -367,16 +217,6 @@ displayerEl.addEventListener('click', function(e) {
     } 
     else {
       info1.style.display = 'none';
-    }
-    ////////////////////////////////
-  }
-  
-  if (selection.matches('.show-button2')) {
-    if (info2.style.display == 'none') {
-      info2.style.display = 'block';
-    } 
-    else {
-      info2.style.display = 'none';
     }
     ////////////////////////////////
   }
@@ -391,32 +231,12 @@ displayerEl.addEventListener('click', function(e) {
     ////////////////////////////////
   }
   
-  if (selection.matches('.show-button4')) {
-    if (info4.style.display == 'none') {
-      info4.style.display = 'block';
-    } 
-    else {
-      info4.style.display = 'none';
-    }
-    ////////////////////////////////
-  }
-  
   if (selection.matches('.show-button5')) {
     if (info5.style.display == 'none') {
       info5.style.display = 'block';
     } 
     else {
       info5.style.display = 'none';
-    }
-    ////////////////////////////////
-  }
-  
-  if (selection.matches('.show-button6')) {
-    if (info6.style.display == 'none') {
-      info6.style.display = 'block';
-    } 
-    else {
-      info6.style.display = 'none';
     }
     ////////////////////////////////
   }
@@ -431,16 +251,6 @@ displayerEl.addEventListener('click', function(e) {
     ////////////////////////////////
   }
   
-  if (selection.matches('.show-button8')) {
-    if (info8.style.display == 'none') {
-      info8.style.display = 'block';
-    } 
-    else {
-      info8.style.display = 'none';
-    }
-    ////////////////////////////////
-  }
-  
   if (selection.matches('.show-button9')) {
     if (info9.style.display == 'none') {
       info9.style.display = 'block';
@@ -451,123 +261,234 @@ displayerEl.addEventListener('click', function(e) {
     ////////////////////////////////
   }
 
-  //////////////////////////////////////////////////////////////
-  // Code for when the FAVORITE button is clicked.
-  //////////////////////////////////////////////////////////////
-
-  if (selection.matches('.fav-button0')) {
-    if (fav0.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorites</p>') {
-      fav0.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
-    } 
-    else if (fav0.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
-      fav0.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
-    }
-    ////////////////////////////////
-  }
-
   if (selection.matches('.fav-button1')) {
-    if (fav1.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorites</p>') {
+    if (fav1.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorite</p>') {
       fav1.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
+      var t1 = document.querySelector('.title1');
+      favoriteFoods[1] = t1.innerHTML;
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
+
+      favDisplayer.innerHTML += '<li>' + favoriteFoods[1] + '</li>';
     } 
     else if (fav1.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
-      fav1.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
-    }
-    ////////////////////////////////
-  }
+      fav1.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorite</p>';
+      favoriteFoods[1] = "";
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
 
-  if (selection.matches('.fav-button2')) {
-    if (fav2.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorites</p>') {
-      fav2.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
-      
-    } 
-    else if (fav2.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
-      fav2.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
+      favDisplayer.innerHTML -= favoriteFoods[1];
     }
     ////////////////////////////////
   }
 
   if (selection.matches('.fav-button3')) {
-    if (fav3.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorites</p>') {
+    if (fav3.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorite</p>') {
       fav3.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
+      var t3 = document.querySelector('.title3');
+      favoriteFoods[3] = t3.innerHTML;
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
     } 
     else if (fav3.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
-      fav3.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
-    }
-    ////////////////////////////////
-  }
-
-  if (selection.matches('.fav-button4')) {
-    if (fav4.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorites</p>') {
-      fav4.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
-    } 
-    else if (fav4.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
-      fav4.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
-    }
-    ////////////////////////////////
-  }
-
-  if (selection.matches('.fav-button0')) {
-    if (fav4.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorites</p>') {
-      fav4.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
-    } 
-    else if (fav4.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
-      fav4.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
+      fav3.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorite</p>';
+      favoriteFoods[3] = "";
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
     }
     ////////////////////////////////
   }
 
   if (selection.matches('.fav-button5')) {
-    if (fav5.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorites</p>') {
+    if (fav5.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorite</p>') {
       fav5.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
+      var t5 = document.querySelector('.title5');
+      favoriteFoods[5] = t5.innerHTML;
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
     } 
     else if (fav5.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
-      fav5.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
-    }
-    ////////////////////////////////
-  }
-
-  if (selection.matches('.fav-button6')) {
-    if (fav6.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorites</p>') {
-      fav6.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
-    } 
-    else if (fav6.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
-      fav6.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
+      fav5.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorite</p>';
+      favoriteFoods[5] = "";
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
     }
     ////////////////////////////////
   }
 
   if (selection.matches('.fav-button7')) {
-    if (fav7.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorites</p>') {
+    if (fav7.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorite</p>') {
       fav7.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
+      var t7 = document.querySelector('.title7');
+      favoriteFoods[7] = t7.innerHTML;
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
     } 
     else if (fav7.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
-      fav7.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
-    }
-    ////////////////////////////////
-  }
-
-  if (selection.matches('.fav-button8')) {
-    if (fav8.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorites</p>') {
-      fav8.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
-    } 
-    else if (fav8.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
-      fav8.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
+      fav7.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorite</p>';
+      favoriteFoods[7] = "";
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
     }
     ////////////////////////////////
   }
 
   if (selection.matches('.fav-button9')) {
-    if (fav9.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorites</p>') {
+    if (fav9.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorite</p>') {
       fav9.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
+      var t9 = document.querySelector('.title9');
+      favoriteFoods[9] = t9.innerHTML;
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
     } 
     else if (fav9.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
-      fav9.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorites</p>';
+      fav9.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorite</p>';
+      favoriteFoods[9] = "";
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
     }
     ////////////////////////////////
   }
   
+ })
+
+ displayerElTwo.addEventListener('click', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  //Gets a property of the element
+  var selection = e.target;
+
+  var info0 = document.querySelector('.recipe-details0');
+  var info2 = document.querySelector('.recipe-details2');
+  var info4 = document.querySelector('.recipe-details4');
+  var info6 = document.querySelector('.recipe-details6');
+  var info8 = document.querySelector('.recipe-details8');
+
+  var fav0 = document.querySelector('.fav-button0');
+  var fav2 = document.querySelector('.fav-button2');
+  var fav4 = document.querySelector('.fav-button4');
+  var fav6 = document.querySelector('.fav-button6');
+  var fav8 = document.querySelector('.fav-button8');
+
+  if (selection.matches('.show-button0')) {
+    if (info0.style.display == 'none') {
+      info0.style.display = 'block';
+    } 
+    else {
+      info0.style.display = 'none';
+    }
+    ////////////////////////////////
+  }
+  
+  if (selection.matches('.show-button2')) {
+    if (info2.style.display == 'none') {
+      info2.style.display = 'block';
+    } 
+    else {
+      info2.style.display = 'none';
+    }
+    ////////////////////////////////
+  }
+  
+  if (selection.matches('.show-button4')) {
+    if (info4.style.display == 'none') {
+      info4.style.display = 'block';
+    } 
+    else {
+      info4.style.display = 'none';
+    }
+    ////////////////////////////////
+  }
+  
+  if (selection.matches('.show-button6')) {
+    if (info6.style.display == 'none') {
+      info6.style.display = 'block';
+    } 
+    else {
+      info6.style.display = 'none';
+    }
+    ////////////////////////////////
+  }
+  
+  if (selection.matches('.show-button8')) {
+    if (info8.style.display == 'none') {
+      info8.style.display = 'block';
+    } 
+    else {
+      info8.style.display = 'none';
+    }
+    ////////////////////////////////
+  }
+
+  if (selection.matches('.fav-button0')) {
+    if (fav0.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorite</p>') {
+      fav0.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
+      var t0 = document.querySelector('.title0');
+      favoriteFoods[0] = t0.innerHTML;
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
+    } 
+    else if (fav0.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
+      fav0.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorite</p>';
+      favoriteFoods[0] = "";
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
+    }
+    ////////////////////////////////
+  }
+
+  if (selection.matches('.fav-button2')) {
+    if (fav2.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorite</p>') {
+      fav2.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
+      var t2 = document.querySelector('.title2');
+      favoriteFoods[2] = t2.innerHTML;
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
+    } 
+    else if (fav2.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
+      fav2.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorite</p>';
+      favoriteFoods[2] = "";
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
+    }
+    ////////////////////////////////
+  }
+
+  if (selection.matches('.fav-button4')) {
+    if (fav4.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorite</p>') {
+      fav4.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
+      var t4 = document.querySelector('.title4');
+      favoriteFoods[4] = t4.innerHTML;
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
+    } 
+    else if (fav4.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
+      fav4.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorite</p>';
+      favoriteFoods[4] = "";
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
+    }
+    ////////////////////////////////
+  }
+
+  if (selection.matches('.fav-button6')) {
+    if (fav6.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorite</p>') {
+      fav6.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
+      var t6 = document.querySelector('.title6');
+      favoriteFoods[6] = t6.innerHTML;
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
+    } 
+    else if (fav6.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
+      fav6.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorite</p>';
+      favoriteFoods[6] = "";
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
+    }
+    ////////////////////////////////
+  }
+
+  if (selection.matches('.fav-button8')) {
+    if (fav8.innerHTML == '<i class="fa-regular fa-star"></i> <p>Favorite</p>') {
+      fav8.innerHTML = '<i class="fa-solid fa-star"></i> <p>Favorites</p>';
+      var t8 = document.querySelector('.title8');
+      favoriteFoods[8] = t8.innerHTML;
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
+    } 
+    else if (fav8.innerHTML == '<i class="fa-solid fa-star"></i> <p>Favorites</p>') {
+      fav8.innerHTML = '<i class="fa-regular fa-star"></i> <p>Favorite</p>';
+      favoriteFoods[8] = "";
+      localStorage.setItem('Favorite Items: ', favoriteFoods);
+    }
+    ////////////////////////////////
+  }
 
  })
+
+
 
 // MODAL Trigger//
 $(document).ready(function(){
