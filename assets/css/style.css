@@ -317,6 +317,21 @@ footer{
     bottom:0;
 }
 
+.footerStarterAfterSearch{
+    display:flex;
+    flex-direction:row;
+}
+
 footer h5 {
     margin:0 0 5px 0;
+}
+
+.footerRepo, .footerApi{
+    display:flex;
+    flex-direction:column;
+    color:white;
+    width:fit-content;
+    height:fit-content;
+    justify-self:center;
+    margin-left:100px;
 }
