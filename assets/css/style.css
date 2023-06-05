@@ -97,17 +97,20 @@ footer{
     JS DYNAMIC ELEMENTS STYLE
 */
 
+.recipe {
+    width: 800px;
+}
+
 /* Style for the whole box of the recipe. */
 .container2 {
     padding: 0;
     display:flex;
-    width: 75%;
-    gap: 30px;
-    margin: 30px 0;
-    background-color: rgba(102, 51, 153, 0.555);
+    width: 1000px;
+    margin: 30px auto;
+    background-color: rgba(43, 43, 43, 0.767);
     border-radius: 15px;
     padding: 30px;
-    
+    margin: 30 auto;
 }
 
 
@@ -115,59 +118,64 @@ footer{
 .info-placer{
     width:75%;
     height:250px;
+    padding: 30px;
     display:flex;
-    flex-direction: row;
+    align-items:center;
 }
 
 /* Style for the H3 inside the box, which is for the recipe title. */
 .info-placer h3 {
     /*changed font size @KrystaGonzalez*/
     font-size: 25px;
-    height:50px;
-    width:300px;
-    margin: 20px auto;
-    margin-left:15%;
-    margin-top:10%;
+    height:fit-content;
+    width:200px;
+    margin:0 0 0 30px;
+    padding-left:30px;
     text-align: center;
-    padding-top: 10px;
-    border-top: 2px solid rgb(37, 139, 171);
-    color: brown;
+    
+    /* border-left: 2px solid rgb(75, 153, 51); */
+    color: rgb(255, 255, 255);
 }
 
 /* Style for the IMG of the container. */
 .info-placer img {
-    border: 2px solid rebeccapurple;
+    border: 2px solid rgb(75, 153, 51);
+    background-color: rgba(255, 255, 255, 0.39);
     border-radius: 15px;
-    padding: 20px;
+    padding: 10px;
     margin: 0;
-    margin-top: 45px;
     /*ajusted img size smaller to make container smaller-KrystaGonzalez*/
     width:150px;
     height:150px;
-
+    padding-right:30px;
 }
 
-#recipe-container{
-    display:inline-table;
-    
+.imgContainer{
+    padding:10px 30px;
+    margin-right:15px;
+    border-right: 2px solid rgb(75, 153, 51);
 }
+
+
 
 /* Style for the article sections */
-.recipe-details {
-    
+.recipe-details0, .recipe-details1, .recipe-details2 ,.recipe-details3, .recipe-details4
+,.recipe-details5, .recipe-details6, .recipe-details7, .recipe-details8, .recipe-details9 {
     justify-content: center;
     align-items: center;
-    border: 2px solid rebeccapurple;
+    border: 2px solid rgb(75, 153, 51);
     border-radius: 15px;
     padding: 30px;
-    width: 370px;
     flex-direction: column;
+    color: rgb(255, 255, 255);
+    font-family: cursive;
+    font-size: 15px;
     /*set display to none to hide ingredients and link-KrystaGonzalez*/
     display:none;
 }
 
 .recipe-details section {
-    background-color: rgba(0, 255, 255, 0.24);
+    background-color: rgba(60, 255, 0, 0.089);
     padding: 10px;
     border-radius: 30px;
     margin-bottom: 20px;
@@ -176,7 +184,28 @@ footer{
 
 /* Style for the ingredients text, previewsly created on JS. */
 .ingredients {
-    color: aliceblue;
+    color: rgb(240, 255, 255);
+}
+
+.show-button0, .show-button1, .show-button2, .show-button3, .show-button4,
+.show-button5, .show-button6, .show-button7, .show-button8 ,.show-button9 {
+    color: rgb(255, 255, 255);
+    background-color: rgba(60, 255, 0, 0.089);
+    border: none;
+    border-radius: 30px;
+    height: 100px;
+    padding: 30px;
+    margin-left: 30px;
+    margin-top: 90px;
+}
+
+.show-button0:hover, .show-button1:hover, .show-button2:hover, .show-button3:hover, .show-button4:hover,
+.show-button5:hover, .show-button6:hover, .show-button7:hover, .show-button8:hover, .show-button9:hover {
+    transform: scale(1.1);
+    color: rgb(0, 0, 0);
+    border: 3px solid rgb(0, 0, 0);
+    background-color: white;
+    transition: all 400ms;
 }
 
 
