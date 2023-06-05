@@ -47,7 +47,6 @@ header{
     padding: 5px 10px;
     margin-left: 10px;;
     background: rgb(46, 216, 210);
-    opacity: .7;
     border-radius: 5px;
     user-select: none;
     font-size: 15px;
@@ -56,16 +55,16 @@ header{
 
 }
 
-     .clear-btn{
-     padding: 5px 10px;
+.clear-btn{
+    padding: 5px 10px;
     margin-left: 10px;;
     background: red;
-    opacity: .5;
+    color:white;
     border-radius: 5px;
     user-select: none;
     font-size: 15px;
     border:10px;
-    cursor:grab;
+    cursor:pointer;
 
 }
 .btn:hover {
@@ -199,4 +198,49 @@ footer{
     border: 3px solid rgb(0, 0, 0);
     background-color: white;
     transition: all 400ms;
+}
+
+
+
+/*styling for google api map*/
+#map {
+    width:900px;
+    height:500px;
+    box-shadow: 0 4px 8px 0 black;
+}
+
+.mapBox{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:10px;
+    padding:5px;
+   
+}
+
+.mapBox button{
+    font-size:20px;
+    margin-top:15px;
+    padding:5px;
+}
+
+/* footer styling */
+footer{
+    padding:15px;
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    height:fit-content;
+    background-color:teal;
+    border-top:5px solid yellowgreen;
+}
+
+.footerStarter{
+    position:fixed;
+    bottom:0;
+}
+
+footer h5 {
+    margin:0 0 5px 0;
 }

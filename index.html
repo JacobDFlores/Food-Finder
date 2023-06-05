@@ -9,49 +9,45 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <link rel="stylesheet" href="./assets/css/style.css" />
         <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <title>Food Finder App</title>
     </head>
 
     <body>
-     <header>
-       
+        <header>
+            <div class="col s12"><h3 class ="right-align" span class="flow-text ">Food Finder<i class="medium material-icons">search</i></h3></div>
+        </header>
 
-       <div class="col s12"><h3 class ="right-align" span class="flow-text ">Food Finder<i class="medium material-icons">search</i></h3>
-       
-       
-    </div>
-      </header>
-
-<!--Quick body stying here-->
-    <style>
-      body{
-        background-size: 100% 100%;
-        background: url(./assets/food-background.jpg);
-        background-repeat: repeat;
-        justify-content: space-between;
-        }
+        <!--Quick body stying here-->
+        <style>
+            body{
+                background-size: 100% 100%;
+                background: url(./assets/images/food-background.jpg);
+                background-repeat: repeat;
+                }
         </style>
 
+        <section class="searchContainer black-text center-align">
+            <div class="searchBar">
+                <input type="text white text" id="text-inp" placeholder="Search Recipes"> <button id="searchBtn" class="btn">Seachfood</button>
+                <a class="waves-effect waves-light btn modal-trigger btn-panel purple" href="#modal1">Favorites</a>
 
-     <section class="searchContainer black-text center-align">
-        <div class="searchBar">
-            <input type="text white text" id="text-inp" placeholder="Search Recipes"> <button class="btn">Seachfood</button>
-            <a class="waves-effect waves-light btn modal-trigger btn-panel purple" href="#modal1">Favorites</a>
-
-            <!-- Modal Structure -->
-            <div id="modal1" class="modal">
-              <div class="modal-content background light purple">
-                <h3>Favorites</h3>
-                <ul class="favorites-list left-align ">
-                    <li><strong>1</strong></li>
-                    <li><strong>2</strong></li>
-                    <li><strong>3</strong></li>
-                    <li><strong>4</strong></li>
-                    <li><strong>5</strong></li>
-                    <li><strong>6</strong></li>
-                    </ul>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                <div class="modal-content background light purple">
+                    <h3>Favorites</h3>
+                    <ul class="favorites-list left-align ">
+                        <li><strong>1</strong></li>
+                        <li><strong>2</strong></li>
+                        <li><strong>3</strong></li>
+                        <li><strong>4</strong></li>
+                        <li><strong>5</strong></li>
+                        <li><strong>6</strong></li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer background teal">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                    </div>
                 </div>
                  <div class="modal-footer background teal">
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -70,12 +66,25 @@
             </div>
 
 
+            
+                <button class="clear-btn" type="reset">Clear Search</button>
+
+            </div>
+            
+            <div id="recipe-container">
+                <div class="recipe"></div>
+            </div>
+        </section>
+
+        <div class="mapBox" style="margin:40px;">
+            <div id="map" style="display:none;"> </div>
         </div>
-     </section>
      
-        <div class="display"> </div>
+        <!-- I dont think we need this piece of html for anything so far -->
+        <!-- <div class="display"> </div> -->
     
-        <div id="favorites">
+        <!-- I dont think we need this piece of html for anything so far -->
+        <!-- <div id="favorites" style="display:none;">
             <ul>
                 <li>step 1</li>
                 <li>step 2</li>
@@ -83,20 +92,28 @@
                 <li>step 4</li>
                 <li>step 5</li>
             </ul>
-        </div>
-                 
-
-
-  <h6>List of Collaborators</h6>
-        <footer>
+        </div> -->
+  
+        <footer id="footerStarter" class="footerStarter" style="color:white; justify-self:flex-end;">
+            <h5>List of Collaborators</h5>
             <ul>
-            <li>Jacob Flores</li>
-            <li>Krysta Gonzalez</li>
-            <li>Carlos Osuna</li>
-            <li>Alen Tokic</li>
-            <li>Dylan Cummins</li>
-            <li>Image by Image by <a href="https://pixabay.com/users/0fjd125gk87-51581/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=366875">0fjd125gk87</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=366875">Pixabay</a>
-      
+                <li>Jacob Flores</li>
+                <li>Krysta Gonzalez</li>
+                <li>Carlos Osuna</li>
+                <li>Alen Tokic</li>
+                <li>Dylan Cummins</li>
+                <li>Image by Image by <a href="https://pixabay.com/users/0fjd125gk87-51581/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=366875">0fjd125gk87</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=366875">Pixabay</a></li>
+            </ul>
+        </footer>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjLv8601naEq2s5UgRYtsJwyqspecgooI&callback=initMap&libraries=places&v=weekly"
+            defer
+        ></script>
+
         <script src="./assets/js/script.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://kit.fontawesome.com/5e9c50042e.js" crossorigin="anonymous"></script>
