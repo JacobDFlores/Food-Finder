@@ -15,7 +15,7 @@
 
     <body>
         <header>
-            <div class="col s12"><h3 class ="right-align" span class="flow-text ">Food Finder<i class="medium material-icons">search</i></h3></div>
+            <div style="margin-left:15px;" class="col s12"><h3 class ="left-align" span class="flow-text ">Food Finder<i class="medium material-icons">search</i></h3></div>
         </header>
 
         <!--Quick body stying here-->
@@ -34,43 +34,43 @@
 
                 <!-- Modal Structure -->
                 <div id="modal1" class="modal">
-                <div class="modal-content background light purple">
-                    <h3>Favorites</h3>
-                    <ul class="favorites-list left-align ">
-                        <li><strong>1</strong></li>
-                        <li><strong>2</strong></li>
-                        <li><strong>3</strong></li>
-                        <li><strong>4</strong></li>
-                        <li><strong>5</strong></li>
-                        <li><strong>6</strong></li>
+                    <div class="modal-content background light purple">
+                        <h3>Favorites</h3>
+                        <ul class="favorites-list left-align ">
+                            <li><strong>1</strong></li>
+                            <li><strong>2</strong></li>
+                            <li><strong>3</strong></li>
+                            <li><strong>4</strong></li>
+                            <li><strong>5</strong></li>
+                            <li><strong>6</strong></li>
                         </ul>
                     </div>
                     <div class="modal-footer background teal">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
                     </div>
                 </div>
-                 <div class="modal-footer background teal">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-              </div>
-            </div>
-          
-                <button class="clear-btn" type="reset">Clear Search</button>
-
-            </div>
-        
-            <div class="container" id="recipe-container">
-                <div class="row">
-                    <div class="recipe"></div>
+                <div class="modal-footer background teal">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
                 </div>
-
-                <button id="btmClear" class="clear-btn" type="reset" style="display:none;">Clear Search</button>
-            </div>
-            
-            <div id="recipe-container">
-                <div class="recipe"></div>
+                <button class="clear-btn" type="reset">Clear Search</button>
             </div>
         </section>
 
+        <section class="recipeBox">
+            
+            <div class="recipeFlexBox">
+                <div class="recipe column1"></div>
+                <div class="recipe column2"></div>
+            </div>
+
+            <button id="btmClear" class="clear-btn" type="reset" style="display:none;">Clear Search</button>
+            
+            
+            <!-- <div id="recipe-container">
+                <div class="recipe"></div>
+            </div> -->
+        </section>
+        
         <div class="mapBox" style="margin:40px;">
             <div id="map" style="display:none;"> </div>
         </div>
@@ -90,15 +90,18 @@
         </div> -->
   
         <footer id="footerStarter" class="footerStarter" style="color:white; justify-self:flex-end;">
-            <h5>List of Collaborators</h5>
-            <ul>
-                <li>Jacob Flores</li>
-                <li>Krysta Gonzalez</li>
-                <li>Carlos Osuna</li>
-                <li>Alen Tokic</li>
-                <li>Dylan Cummins</li>
-                <li>Image by Image by <a href="https://pixabay.com/users/0fjd125gk87-51581/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=366875">0fjd125gk87</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=366875">Pixabay</a></li>
-            </ul>
+            <div>
+                <h5>List of Collaborators</h5>
+                <ul>
+                    <li>Jacob Flores</li>
+                    <li>Krysta Gonzalez</li>
+                    <li>Carlos Osuna</li>
+                    <li>Alen Tokic</li>
+                    <li>Dylan Cummins</li>
+                    <li>Karla Munoz</li>
+                    <li>Image by Image by <a href="https://pixabay.com/users/0fjd125gk87-51581/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=366875">0fjd125gk87</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=366875">Pixabay</a></li>
+                </ul>
+             </div>  
         </footer>
 
 
