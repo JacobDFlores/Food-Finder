@@ -73,7 +73,7 @@ function checkRecipes(data, userResult) {
    
     // create a div element which is the container where everything is displayed. 
     let containerFinal = document.createElement('div');
-    containerFinal.setAttribute('class', 'container2' );
+    containerFinal.setAttribute('class', 'container2');
 
     // create the article section.
     let containerArticle = document.createElement('article');
@@ -82,7 +82,7 @@ function checkRecipes(data, userResult) {
     // recipe url. ***(CURRENTLY WORKING ON MAKING IT AN ANCHOR)***
     containerArticle.innerHTML = '<section>' + '<div class = "ingredients" >' + 'Ingredients: ' + '</div>' + '<br>' + data.results[i].sourceUrl + '<br><br>' + '</section>';
     // 
-    containerArticle.setAttribute('class', 'recipe-details');
+    containerArticle.setAttribute('class', 'recipe-details' + i);
 
     // for loop to display the steps to make the recipe.
     for (var z = 0; z < (data.results[i].analyzedInstructions[0].steps).length; z++) {
@@ -96,15 +96,146 @@ function checkRecipes(data, userResult) {
     infoPlacer.appendChild(container);
     infoPlacer.setAttribute('class', 'info-placer');
   
+   // create a button element to display the recipes details.
+   let showInfo = document.createElement('button');
+   showInfo.setAttribute('class', 'show-button' + i);
+   showInfo.innerHTML = '<i class="fa-solid fa-book-open"></i> <p>More Info</p>';
+   //
+
+   //
+
    
+   displayerEl.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    //Gets a property of the element
+    var selection = e.target;
+
+    var info0 = document.querySelector('.recipe-details0');
+    var info1 = document.querySelector('.recipe-details1');
+    var info2 = document.querySelector('.recipe-details2');
+    var info3 = document.querySelector('.recipe-details3');
+    var info4 = document.querySelector('.recipe-details4');
+    var info5 = document.querySelector('.recipe-details5');
+    var info6 = document.querySelector('.recipe-details6');
+    var info7 = document.querySelector('.recipe-details7');
+    var info8 = document.querySelector('.recipe-details8');
+    var info9 = document.querySelector('.recipe-details9');
+    
+    if (selection.matches('.show-button0')) {
+      if (info0.style.display == 'none') {
+        info0.style.display = 'block';
+      } 
+      else {
+        info0.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button1')) {
+      if (info1.style.display == 'none') {
+        info1.style.display = 'block';
+      } 
+      else {
+        info1.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button2')) {
+      if (info2.style.display == 'none') {
+        info2.style.display = 'block';
+      } 
+      else {
+        info2.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button3')) {
+      if (info3.style.display == 'none') {
+        info3.style.display = 'block';
+      } 
+      else {
+        info3.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button4')) {
+      if (info4.style.display == 'none') {
+        info4.style.display = 'block';
+      } 
+      else {
+        info4.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button5')) {
+      if (info5.style.display == 'none') {
+        info5.style.display = 'block';
+      } 
+      else {
+        info5.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button6')) {
+      if (info6.style.display == 'none') {
+        info6.style.display = 'block';
+      } 
+      else {
+        info6.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button7')) {
+      if (info7.style.display == 'none') {
+        info7.style.display = 'block';
+      } 
+      else {
+        info7.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button8')) {
+      if (info8.style.display == 'none') {
+        info8.style.display = 'block';
+      } 
+      else {
+        info8.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+    if (selection.matches('.show-button9')) {
+      if (info9.style.display == 'none') {
+        info9.style.display = 'block';
+      } 
+      else {
+        info9.style.display = 'none';
+      }
+      ////////////////////////////////
+    }
+    
+
+   })
+   //
 
     // appends the preview elements to the final container.
     containerFinal.appendChild(infoPlacer);
     containerFinal.appendChild(containerArticle);
+    containerFinal.appendChild(showInfo);
     
     
     // appends the final element to the final div wich is the .recipe class.
     displayerEl.appendChild(containerFinal);
+    
   }
 }
 
