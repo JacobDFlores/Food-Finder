@@ -248,6 +248,7 @@ footer{
 .show-button0:hover, .show-button1:hover, .show-button2:hover, .show-button3:hover, .show-button4:hover,
 .show-button5:hover, .show-button6:hover, .show-button7:hover, .show-button8:hover, .show-button9:hover {
     transform: scale(1.1);
+    cursor: pointer;
     color: rgb(0, 0, 0);
     border: 3px solid rgb(0, 0, 0);
     background-color: white;
@@ -270,6 +271,7 @@ footer{
 .fav-button0:hover, .fav-button1:hover, .fav-button2:hover, .fav-button3:hover, .fav-button4:hover,
 .fav-button5:hover, .fav-button6:hover, .fav-button7:hover, .fav-button8:hover, .fav-button9:hover {
     transform: scale(1.04);
+    cursor: pointer;
     color: rgb(0, 0, 0);
     border: 3px solid rgb(0, 0, 0);
     background-color: white;
