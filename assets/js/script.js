@@ -4,7 +4,7 @@ var requestUrl = 'https://api.spoonacular.com/recipes/complexSearch?';
 var requestUrlFoods = 'https://api.spoonacular.com/food/search?';
 
 // API key.
-var apiKey = 'apiKey=1a4b9968c31240dbaf9b48e10ead08ce';
+var apiKey = 'apiKey=694b2bd289a946c18d2535c1c6bcfe91';
 
 // variables to get the data from html
 var totalData = [];
