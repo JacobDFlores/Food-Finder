@@ -337,3 +337,202 @@ footer h5 {
     justify-self:center;
     margin-left:100px;
 }
+
+@media screen and (max-width: 1200px) {
+    .searchBar{
+        flex-direction:column;
+        height:fit-content;
+    }
+
+    .searchBar > * {
+        margin-top:15px;
+    }
+
+    .footerStarter{
+        position:static;
+        bottom:0;
+        flex-direction:column;
+    }
+
+    .footerStarterAfterSearch{
+        position:static;
+        bottom:0;
+        flex-direction:column
+    }
+
+    .footerStarter > * {
+        padding:5px;
+        margin:5px;
+    }
+
+    .footerStarterAfterSearch > * {
+        padding:5px;
+        margin:5px;
+    }
+
+
+    .recipeFlexBox {
+        flex-direction:column;
+        width:95%;
+        align-items:center;
+    }
+
+    #map {
+        transform: scale(0.85);
+        box-shadow: 0 4px 8px 0 black;
+    }
+
+    .container2 {
+        /* transform: scale(0.9); */
+        width:80%;
+        height:80%;
+    }
+  }
+  
+  /* Large smartphones - navbar changes color */
+  @media screen and (max-width: 768px) {
+    .searchBar{
+        flex-direction:column;
+        height:fit-content;
+    }
+
+    .searchBar > * {
+        margin-top:15px;
+    }
+
+    .footerStarter{
+        position:static;
+        bottom:0;
+        flex-direction:column;
+    }
+
+    .footerStarterAfterSearch{
+        position:static;
+        bottom:0;
+        flex-direction:column
+    }
+
+    .footerStarter > * {
+        padding:5px;
+        margin:5px;
+    }
+
+    .footerStarterAfterSearch > * {
+        padding:5px;
+        margin:5px;
+    }
+
+
+    .recipeFlexBox {
+        flex-direction:column;
+        width:95%;
+        align-items:center;
+    }
+
+    #map {
+        transform: scale(0.65);
+        box-shadow: 0 4px 8px 0 black;
+    }
+
+    .container2 {
+        /* transform: scale(0.6); */
+        width:79%;
+        height:79%;
+    }
+
+    /* .recipeBox{
+        width:0.5rem;d
+        height:0.5rem;
+    } */
+
+    .minorRow {
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .info-placer{
+        margin-right:57px;
+    }
+
+    .show-button0, .show-button1, .show-button2, .show-button3, .show-button4,
+.show-button5, .show-button6, .show-button7, .show-button8 ,.show-button9 {
+    margin-bottom:15px;
+    margin-left:0;
+  }
+}
+  
+  /* Small smartphones - image placeholders change color */
+  @media screen and (max-width: 576px) {
+    .searchBar{
+        flex-direction:column;
+        height:fit-content;
+    }
+
+    .searchBar > * {
+        margin-top:15px;
+    }
+
+    .footerStarter{
+        position:static;
+        bottom:0;
+        flex-direction:column;
+    }
+
+    .footerStarterAfterSearch{
+        position:static;
+        bottom:0;
+        flex-direction:column
+    }
+
+    .footerStarter > * {
+        padding:5px;
+        margin:5px;
+    }
+
+    .footerStarterAfterSearch > * {
+        padding:5px;
+        margin:5px;
+    }
+
+
+    .recipeFlexBox {
+        flex-direction:column;
+        width:95%;
+        align-items:center;
+    }
+
+    #map {
+        transform: scale(0.52);
+        box-shadow: 0 4px 8px 0 black;
+    }
+
+    .container2 {
+        /* transform: scale(0.6); */
+        width:55%;
+        height:55%;
+    }
+
+    /* .recipeBox{
+        width:0.5rem;d
+        height:0.5rem;
+    } */
+
+    .minorRow {
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .info-placer{
+        margin-right:57px;
+        width:415px;
+    }
+
+
+
+    .show-button0, .show-button1, .show-button2, .show-button3, .show-button4,
+.show-button5, .show-button6, .show-button7, .show-button8 ,.show-button9 {
+    margin-bottom:15px;
+    margin-left:0;
+  }
+}
+  
